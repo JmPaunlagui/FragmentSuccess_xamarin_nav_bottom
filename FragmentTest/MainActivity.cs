@@ -58,11 +58,11 @@ namespace FragmentTest
             mStackFragment = new Stack<SupportFragment>();
 
             var trans = SupportFragmentManager.BeginTransaction();
-            trans.Add(Resource.Id.bottom_navigation, mFragment3, "Fragment3");
+            trans.Add(Resource.Id.fragmentContainer, mFragment3, "Fragment3");//NOT bottom_navigation, it must be the container
             trans.Hide(mFragment3);
-            trans.Add(Resource.Id.bottom_navigation, mFragment2, "Fragment2");
+            trans.Add(Resource.Id.fragmentContainer, mFragment2, "Fragment2");
             trans.Hide(mFragment2);
-            trans.Add(Resource.Id.bottom_navigation, mFragment1, "Fragment1");
+            trans.Add(Resource.Id.fragmentContainer, mFragment1, "Fragment1");
             trans.Commit();
 
             mCurrentFragment = mFragment1;
